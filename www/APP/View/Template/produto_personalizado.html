@@ -1,0 +1,165 @@
+﻿<div ng-init="init_produto_personalizado()" class="panel panel-default panel-body panel-ernetwork">
+    <div class="form-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title line_font_size_list">Pesquisa</h4>
+            </div>
+                <div class="panel-body form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <label for="input_quantidade" class="col-md-2 control-label">Código</label>
+                                <div class="input-group">
+                                    <input type="number" ui-keypress="{ 'enter' : 'consultaProduto()'}" ng-change="pesquisado_produto = false" id="input_num_produto" ng-model="num_produto" class="form-control empty">
+                                    <div class="input-group-btn">
+                                        
+                                    </div>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default btn-fab btn-raised button_obs fa fa-search" ng-click="buscar_produto()"></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-5">
+                                <label for="input_quantidade" class="col-md-2 control-label">Particionamento</label>
+                                <div class="input-group">
+                                    <div class="col-xs-6">
+                                        <input type="number" ui-keypress="{ 'enter' : 'adicionar()'}" id="input_lanc_part" ng-model="lancamento_particao" class="form-control empty text-center">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="number" style="border-bottom: 1px solid #22BF00;" disabled="disabled" id="input_total_part" ng-model="personalizacao.total_particoes" class="form-control empty text-center">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button ng-show="!pesquisado_produto" ng-disabled="num_produto == undefined || num_produto == '' " ng-click="consultaProduto()" class="btn btn-info btn-fab btn-raised btn_comando_linha button_obs fa fa-search"></button>
+                                <button ng-show="pesquisado_produto" ng-disabled="num_produto == undefined || num_produto == '' " ng-click="adicionar()" class="btn btn-success btn-fab btn-raised fa fa-check btn_comando_linha"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="text-primary descricao_produto_personalizar">{{produto_pesq.descricao}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--TABELA DE PARTIÇÕES-->
+    <div class="form-group" ng-show="personalizacao.produtos.length > 0">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">Produtos</h4>
+            </div>
+            <div class="panel-body no_padding table-scroll">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%">Item</th>
+                            <th>Partição</th>
+                            <th>Preço</th>
+                            <th>Obs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="produto in personalizacao.produtos">
+                            <td>
+                                {{produto.descricao}}
+                                <span ng-show="produto.variacao === 'ADICIONAR'" class="mdi-content-add-circle-outline"></span>
+                                <span ng-show="produto.variacao === 'RETIRAR'" class="mdi-content-remove-circle-outline"></span>
+                            </td>
+                            <td>
+                                {{produto.particao}}
+                            </td>
+                            <td>
+                                {{produto.valor_venda}}
+                            </td>
+                            <td>
+                                <center>
+                                    <button class="btn btn-default btn-fab btn-raised button_obs fa fa-pencil-square-o" ng-click="adicionar_observacao(produto)"></button>
+                                    <button class="btn btn-danger btn-fab btn-raised button_obs fa fa-times" ng-click="remover(produto)"></button>
+                                </center>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-8">
+                <label for="input_quantidade" class="col-md-2 control-label">Total</label>
+                {{personalizacao.total}}
+            </div>
+            <div class="col-xs-4 right">
+                <button ng-disabled="personalizacao.restante_particoes > 0" ng-click="finalizar()" class="btn btn-success btn-fab btn-raised button_obs fa fa-check"></button>
+                <button ng-click="retornar()" class="btn btn-danger btn-fab btn-raised button_obs fa fa-times"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal de VARIAÇÃO-->
+<div class="modal" id="modal_variacao">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Especifique a variação</h4>
+                <h5>{{produto.descricao}}</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Tipos</label>
+                    <div class="col-lg-10">
+                        <div class="radio radio-primary">
+                            <label>
+                                <input type="radio" name="option_incluir_variacao" ng-model="produto_pesq.variacao" id="option_incluir_variacao" value="ADICIONAR" checked="true">
+                                Adicionar<span class="circle"></span><span class="check"></span>
+                            </label>
+                        </div>
+                        <div class="radio radio-primary">
+                            <label>
+                                <input type="radio" name="option_excluir_variacao" ng-model="produto_pesq.variacao" id="option_excluir_variacao" value="RETIRAR">
+                                Remover<span class="circle"></span><span class="check"></span>
+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="adicionar()" class="btn btn-primary btn_salvar_produto_variacao" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM - Modal de VARIAÇÃO-->
+<!--Modal de OBSERVAÇÃO-->
+<div class="modal" id="modal_observacao">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="" aria-hidden="true">×</button>
+                <h4 class="modal-title">Observação</h4>
+                <h5>{{produto_selecionado.descricao}}</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <div class="form-group">
+                            <input class="form-control input-lg" type="text" id="inputLarge" ng-model="produto_selecionado.observacao">
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn_salvar_produto_variacao" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIM - Modal de OBSERVAÇÃO-->

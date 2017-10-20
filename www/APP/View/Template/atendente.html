@@ -1,0 +1,34 @@
+﻿<div ng-init="init(1)" class="panel panel-default panel-body panel-ernetwork">
+    <div class="panel panel-primary">
+        <div class="panel-body no_padding padding_bottom_top_list">
+            <div class="list-group">
+                <div ng-repeat="funcionario in listaFuncionario">
+                    <div class="list-group-item list_group_item_padding" style="margin-bottom:-20px">
+                        <div class="row-action-primary padding_right_list">
+                            <ul class="list-group margem_bottom_list_group">
+                                <li>
+                                    <button class="btn btn-fab fa fa-user-circle" style="font-size: 30px; padding:1px" ng-click="enviarAtendente(funcionario)"></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row-content">
+                            <div class="list-group margem_bottom_list_group">
+                                <table class="table ">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:left; font-size: 15px; border:none">{{funcionario.numero}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left; font-size: 15px; border:none">{{funcionario.nome}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-separator cor_black_separador"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

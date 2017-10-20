@@ -1,0 +1,70 @@
+﻿<div ng-init="init()" class="panel panel-default panel-body panel-ernetwork">
+    <div class="form-group">
+        <div class="list-group margim_bottom_0">
+            <div ng-repeat="grupo in produtoGrupos track by $index">
+                <div class="list-group-item list_group_item_padding">
+                    <div class="row-content rowGrupo">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default panel_grupo_produto">
+                                <div class="panel-heading painelTitleGrupo" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <button class="btn btn-default btnGrupo" ng-click="consultaSubGrupo(grupo)">{{grupo.descricao}}</button>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse navbar-collapse in" role="tabpanel" aria-labelledby="headingOne" ng-show="exibir_itens_grupo(grupo)">
+                                    <div class="panel-body panel_paddin">
+                                        <div ng-repeat="subgrupo in grupo.subgrupo track by $index">
+                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                <div class="panel panel-default panel_interno_subgrupo">
+                                                    <div class="panel-heading painelTitleGrupo" role="tab" id="headingOne">
+                                                        <h4 class="panel-title">
+                                                            <button class="btn btn-default btnSubGrupo" ng-class="{'habilita_opcao':valida_tem_opcao(subgrupo),'nao_habilita_opcao':!valida_tem_opcao(subgrupo),'habilita_fatias':valida_tem_opcao_fatias(subgrupo)}"
+                                                                ng-click="consultaProdutoSubGrupo(grupo, subgrupo)">{{subgrupo.descricao}}</button>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseOne" class="panel-collapse panel-collapse in" role="tabpanel" aria-labelledby="headingOne" ng-show="exibir_itens_subgrupo(subgrupo)">
+                                                        <div class="panel-body panel_paddin">
+                                                            <div class="table-responsive">
+                                                                <table class="table margin_bottom_table">
+                                                                    <tbody ng-repeat="produto in subgrupo.produtos track by $index">
+                                                                        <tr>
+                                                                            <td class="produto">
+                                                                                <span style="display:flex; background-color:gainsboro;">{{produto.descricao}}</span>
+                                                                                </br>
+                                                                                <span class="valor_venda" style="display:flex;margin-bottom:5px;margin-top:-10px" ng-show="!subgrupo.habilitar_opcao">{{produto.valor_produto | currency:'R$ '}}</span>
+                                                                                <div ng-show="subgrupo.habilitar_opcao" class="table-responsive" style="display:flex;margin-bottom:5px;margin-top:-10px">
+                                                                                    <table class="table margin-botton-table">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th ng-repeat="opcao in produto.opcoes" ng-show="opcao.op_desc">{{opcao.op_desc}}</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td ng-repeat="opcao in produto.opcoes" ng-show="opcao.op_desc">
+                                                                                                    <span class="btn btn-default btnProduto">{{opcao.op_valor | currency:'R$ '}}</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

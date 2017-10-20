@@ -1,0 +1,98 @@
+﻿<div ng-init="init(1)" class="panel panel-default panel-body panel-ernetwork">
+    <!--<h4>Consulta de Produtos</h4>-->
+    <div class="form-group">
+        <div class="list-group margim_bottom_0 ">
+            <div ng-repeat="grupo in produtoGrupos track by $index">
+                <div class="list-group-item list_group_item_padding">
+                    <div class="row-content rowGrupo">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default panel_grupo_produto">
+                                <div class="panel-heading painelTitleGrupo" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <button class="btn btn-default btnGrupo" ng-click="consultaSubGrupo(grupo)">{{grupo.descricao}}</button>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" ng-show="exibir_itens_grupo(grupo)">
+                                    <div class="panel-body panel_paddin">
+                                        <div ng-repeat="itens in grupo.subgrupo track by $index">
+                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                <div class="panel panel-default panel_interno_subgrupo">
+                                                    <div class="panel-heading painelTitleGrupo" role="tab" id="headingOne">
+                                                        <h4 class="panel-title">
+                                                            <button class="btn btn-default btnSubGrupo" ng-class="{'habilita_opcao':valida_tem_opcao(itens),'nao_habilita_opcao':!valida_tem_opcao(itens),'habilita_fatias':valida_tem_opcao_fatias(itens)}"
+                                                                ng-click="consultaProdutoSubGrupo(itens, grupo)">{{itens.descricao}}</button>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" ng-show="exibir_itens_subgrupo(itens)">
+                                                        <div class="panel-body panel_paddin">
+                                                            <div class="table-responsive">
+                                                                <table class="table margim_bottom_table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="table-header" style="width:50%;max-width:50%">Descricao</th>
+                                                                            <th class="table-header" style="min-width:20%">Quantidade</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody ng-repeat="produto in itens.produtos track by $index">
+                                                                        <tr style="">
+                                                                            <td class="produto">
+                                                                                <button class="btn btn-default btnProduto" ng-click="adicionar_quant_produto(produto)" ng-model="produto.selecionado">
+                                                                                    <span style="margin-left: 15px">{{produto.descricao}}</span>
+                                                                                </button>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="input-group irredutivel">
+                                                                                    <div class="input-group-btn">
+                                                                                        <button ng-click="remover_quant_produto(produto)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                                                    </div>
+                                                                                    <input style="text-align: center; background: #E7E9EA" type="number" ng-model="produto.quantidade" ng-focus="guarda_quantidade(produto)"
+                                                                                        ng-blur="verifica_quantidade(produto)"
+                                                                                        class="form-control" id="input_quantidade"
+                                                                                        ng-init="produto.quantidade=0" value="0"
+                                                                                        min="0" />
+                                                                                    <div class="input-group-btn">
+                                                                                        <button ng-click="adicionar_quant_produto(produto)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2 right button_save_produto">
+                    <button ng-click="adicionarProdutoPedido()" class="btn btn-success btn-fab btn-raised fa fa-check "></button>
+                    <button ng-click="voltarPedido()" class="btn btn-danger btn-fab btn-raised fa fa-times"></button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-include="'APP/View/Template/modal_opcao.html'"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal_variacao">
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-include="'APP/View/Template/variacao.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

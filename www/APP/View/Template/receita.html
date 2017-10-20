@@ -1,0 +1,119 @@
+﻿<div ng-init="init()">
+    <div>
+        <div class="panel panel-default panel-body panel-ernetwork" ng-hide="relatorioReceita">
+            <div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title line_font_size_list">Pesquisa</h4>
+                    </div>
+                    <div class="panel-body form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" ng-model="pesquisa.produtodesc" placeholder="Produto..." ng-keyup="buscaProdutosLista()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div ng-repeat="inicial in iniciaisProdutos " style="display: inline-block;">
+                                <button class="btn btn-success btn-raised" style="padding: 8px 15px 8px 15px; margin:4px; font-size:20px" ng-click="validaEscolhaParticao(inicial)"
+                                    ng-class="{green_status2:(inicial.selecionada == false?true:false), blue_status2:(inicial.selecionada == true?true:false)}">{{inicial.op}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="width: 72px; margin-top: -15px; float: right;">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div style="display: inline-block;">
+                                <div style="display: inline-block;">
+                                    <div class="panel-body no_padding padding_bottom_top_list" style="display: inline-block;">
+                                        <div class="list-group">
+                                            <div class="list-group-item list_group_item_padding">
+                                                <div class="row-action-primary padding_right_list" style="text-align:center" ng-repeat="parcicao in particoes " ng-show="parcicao.habilitada">
+
+                                                    <button class="btn btn-fab   btn-pizza-1" ng-style="{'background-color':parcicao.selecionada == false ?  '#4caf50': '#2196F3'}"
+                                                        style="width:55px; height:55px; font-size:30px; color:white;" ng-show="parcicao.particao == 1"
+                                                        ng-click="validaPedacos(parcicao)"></button>
+
+                                                    <button class="btn btn-fab   btn-pizza-2" style="width:55px; height:55px; font-size:30px; color:white; background-color: #4caf50"
+                                                        ng-style="{'background-color':parcicao.selecionada == false ?  '#4caf50': '#2196F3'}"
+                                                        ng-show="parcicao.particao == 2" ng-click="validaPedacos(parcicao)"></button>
+
+                                                    <button class="btn btn-fab   btn-pizza-5" style="width:55px; height:55px; font-size:30px; color:white; background-color: #4caf50"
+                                                        ng-style="{'background-color':parcicao.selecionada == false ?  '#4caf50': '#2196F3'}"
+                                                        ng-show="parcicao.particao == 3" ng-click="validaPedacos(parcicao)"></button>
+
+                                                    <button class="btn btn-fab   btn-pizza-3" style="width:55px; height:55px; font-size:30px; color:white; background-color: #4caf50"
+                                                        ng-style="{'background-color':parcicao.selecionada == false ?  '#4caf50': '#2196F3'}"
+                                                        ng-show="parcicao.particao == 4" ng-click="validaPedacos(parcicao)"></button>
+
+                                                    <button class="btn btn-fab   btn-pizza-4" style="width:55px; height:55px; font-size:30px; color:white; background-color: #4caf50"
+                                                        ng-style="{'background-color':parcicao.selecionada == false ?  '#4caf50': '#2196F3'}"
+                                                        ng-show="false" ng-click="validaPedacos(parcicao)"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="margin-top: -15px;">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div ng-repeat="prod in produtosTela  | filter:pesquisa.produtodesc" style="display: inline-block;">
+                                <button class="btn btn-success btn-raised" style="padding: 8px 15px 8px 15px; margin:4px; font-size:15px;    width: 202px;"
+                                    ng-click="escolheSabor(prod)" ng-class="{green_status2:(prod.selecionada == false?true:false), blue_status2:(prod.selecionada == true?true:false)}">{{prod.descricao}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 right">
+                        <div class="button_save_produto">
+                            <button ng-click="mostrarReceita()" class="btn btn-success btn-fab btn-raised mdi-action-done "></button>
+                            <button ng-click="retornaInicio()" class="btn btn-danger btn-fab btn-raised fa fa-times"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Receita -->
+        <div class="panel panel-default panel-body panel-ernetwork" ng-show="relatorioReceita">
+            <div class="panel panel-primary" ng-repeat="produtoPai in listaProdutosReceita">
+                <div class="panel-heading" >
+                    <h4 id="receitaTitulo-{{$index}}" class="panel-title line_font_size_list" style="display: inline-block;">{{produtoPai.descricao}}</h4>
+                    <button class="btn-alterar-fonte-aumentar" ng-show="{{$index}} === 0" ng-click="alterarFonte(1)"> A+</button>
+                    <button class="btn-alterar-fonte-diminuir" ng-show="{{$index}} === 0" ng-click="alterarFonte(0)"> A-</button>
+                </div>
+                <div class="panel-body form-group" >
+                    <table class="table table-striped" id="receita-{{$index}}">
+                        <tr>
+                            <th> Ingredientes </th>
+                            <th> Quantidade </th>
+                        </tr>
+                        <tr ng-repeat="prodFilho in produtoPai.prodFilhos" >
+                            <td>{{prodFilho.descricao}} </td>
+                            <td>{{prodFilho.quantidade}} </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2 right">
+                        <div class="button_save_produto">
+                            <button ng-click="retornaInicioReceita()" class="btn btn-success btn-fab btn-raised fa fa-sign-out"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

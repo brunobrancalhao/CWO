@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.commercefastapp189311" version="0.0.24" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.APACwoapp189311" version="0.0.24" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>cfastapp</name>
-    <description>CommercefastAPP para Bar e Restaurante.</description>
+    <description>APACwoAPP para Bar e Restaurante.</description>
     <author email="ernetwork@ernetwork.com.br" href="http://www.ernetwork.com.br/">ERnetwork Team</author>
     <content src="index.html" />
     <access origin="*" />

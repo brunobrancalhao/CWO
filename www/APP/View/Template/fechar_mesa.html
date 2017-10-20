@@ -1,0 +1,106 @@
+﻿<div ng-init="init(1)" class="panel panel-default panel-body panel-ernetwork">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title line_font_size_list">Mesa {{mesa.ci}}</h4>
+        </div>
+        <div class="panel-body no_padding padding_bottom_top_list">
+            <div class="list-group">
+                <div class="list-group-item list_group_item_padding">
+                    <div class="row-content" style="width:100%">
+                        <div class="list-group margem_bottom_list_group">
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Data</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.data_abertura}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px">Permanência</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.tempo_permanecia}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Sub Total</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vl_sub_total | currency:'R$ '}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Valor Taxa</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vl_taxa_servico | currency:'R$ '}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px; font-weight:bold">Total</td>
+                                        <td style="text-align:left; font-size: 15px; font-weight:bold">{{mesa.vl_total - mesa.vl_credito | currency:'R$ '}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Qtd. Pessoa</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.qtd_pessoa}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Por Pessoa</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vlporpessoa | currency:'R$ '}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="fa fa-arrow-down fa-lg" style="border:none; background-color: white; color: silver; font-size: 15px" ng-click="mostrarDetalhe()" ng-show="mostraDetalhe">
+                                <span style="font-family: RobotoDraft, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif">Detalhamento</span> 
+                            </button>
+                            <button class="fa fa-arrow-right fa-lg" style="border:none; background-color: white; color: silver; font-size: 15px" ng-click="mostrarDetalhe()" ng-show="!mostraDetalhe">
+                                <span style="font-family: RobotoDraft, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif">Detalhamento</span> 
+                            </button>
+                            <table class="table" ng-show="mostraDetalhe">
+                                <tbody>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Acrécimo</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vl_acrescimo | currency:'R$ '}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Desconto</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vl_desconto | currency:'R$ '}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px; width: 120px;">Crédito</td>
+                                        <td style="text-align:left; font-size: 15px">{{mesa.vl_credito | currency:'R$ '}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-info margim_panel">
+                        <div class="panel-heading">Itens da Mesa</div>
+                        <div class="panel-body padding_panel">
+                            <div class="table-responsive">
+                                <table class="table margim_bottom_table">
+                                    <thead>
+                                        <tr>
+                                            <td>Descrição</td>
+                                            <td>Qtd</td>
+                                            <td>Valor Unit</td>
+                                            <td>Total</td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody ng-repeat="item in itens_mesa">
+                                        <tr>
+                                            <td>{{item.produto.descricao}}</td>
+                                            <td>{{item.qtd_item}}</td>
+                                            <td>{{item.valor_item | currency:'R$ '}}</td>
+                                            <td>{{item.valor_total_item | currency:'R$ '}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2 right">
+                                <button class="btn btn-success btn-fab btn-raised fa fa-check" ng-click="fecharMesa(mesa)"></button>
+                                <button class="btn btn-danger btn-fab btn-raised fa fa-times" ng-click="voltarMesa()"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

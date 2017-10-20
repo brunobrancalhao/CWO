@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="APACwo" id="html" style="height:100%">
+
+<head>
+    <link rel="shortcut icon" href="img/cfast60x41.png">
+    <title>Apac Movel</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!--JQuery-->
+    <script src="APP/Core/Jquery/jquery-1.10.2.js"></script>
+    <link href="APP/Core/Jquery/jquery-ui.min.css" rel="stylesheet" />
+    <script src="APP/View/Tema/boostrap/sidebar.js"></script>
+    <link href="APP/View/Tema/boostrap/sidebar.css" rel="stylesheet" />
+    <!--FIM - JQuery-->
+
+    <!--Bootstrap Paper-->
+    <link href="APP/View/Tema/boostrap/bootstrap.min.css" rel="stylesheet">
+    <script src="APP/View/Tema/boostrap/bootstrap.min.js"></script>
+
+    <link href="APP/View/Tema/material-ui/css/ripples.min.css" rel="stylesheet">
+    <link href="APP/View/Tema/material-ui/css/roboto.min.css" rel="stylesheet">
+    <link href="APP/View/Tema/material-ui/css/material-fullpalette.css" rel="stylesheet">
+    <script src="APP/View/Tema/material-ui/js/ripples.min.js"></script>
+    <!--FIM - Bootstrap Paper-->
+    <input type="hidden" id="raiz_app" value="APP" />
+
+    <!--Angular-->
+    <script src="APP/Core/Angular/angular-route.min.js"></script>
+
+    <script src="APP/Core/Angular/ui-utils.min.js"></script>
+    <script src="APP/Core/Angular/ngStorage.js"></script>
+    <script src="APP/Core/Angular/angular-mocks.js"></script>
+    <script src="APP/Core/Angular/loading bar/loading-bar.js"></script>
+    <script src="APP/Core/Angular/angular-cookies.min.js"></script>
+    <script src="APP/Core/Angular/angular-aria.min.js"></script>
+    <script src="APP/Core/Angular/angular-messages.min.js"></script>
+    <script src="APP/Core/Angular/angular-material.min.js"></script>
+    <link href="APP/Core/Angular/loading bar/loading-bar.css" rel="stylesheet" />
+    <link href="APP/Core/Angular/angular-material.min.css" rel="stylesheet">
+    <!--FIM - Angular-->
+
+    <!--Alertify-->
+    <script src="APP/Core/Alertify/alertify.js"></script>
+    <link href="APP/Core/Alertify/alertify.min.css" rel="stylesheet" />
+    <link href="APP/Core/Alertify/default.css" rel="stylesheet" />
+    <!--FIM - Alertify-->
+
+    <!--Font Awesome-->
+    <link href="APP/Core/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--FIM Font Awesome-->
+
+    <!--APLICAÇÃO-->
+    <script src="APP/Scripts/Base/Base.js"></script>
+
+    <script src="APP/Scripts/Base/auxiliar.js"></script>
+    <script src="APP/Scripts/Base/controle_menu.js"></script>
+    <script src="APP/Scripts/Base/Pooler.js"></script>
+
+    <script src="APP/Scripts/Login/controle_login.js"></script>
+    <script src="APP/Scripts/Pedido/controle_apac.js"></script>
+
+    <link href="APP/View/Tema/estilo.css" rel="stylesheet">
+
+    <!--FIM - APLICAÇÃO-->
+</head>
+
+<body class="body_pw" id="body_pw" style="height:100%; background-image:url(img/cfast_bkg402x800.png);">
+    <div id="wrapper" class="wrap" style="background-image:url(img/cfast_bkg402x800.png);">
+        <div ng-hide="usuario.logado" ng-controller="controle_menu">
+            <div id="page-content-wrapper">
+                <div class="container_nav sty">
+                    <div class="row-action-primary padding_right_list" style="text-align:center">
+                        <ul class="list-group margem_bottom_list_group">
+                            <li>
+                                <div ng-hide="menu_alternativo">
+                                    <button type="button" class="icoMenu" data-toggle="offcanvas" ng-click="toggleLeft()" id="BotaoMenu">
+                                         <i class="fa fa-bars" aria-hidden="true" style="font-size:40px; margin-top: -8px; " id="imagemMenu"></i>
+                                    </button>
+                                </div>
+                                <div id="ImgLogoDireito">
+                                    <a href="#/"><img class="logo" src="img/cfast60x41.png" style="margin-top: -8px;"/></a>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="panel-title" id="TituloInicio" style="font-size: 35px; line-height:20px; color:white; font-family:  Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif">{{nomeTela}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div ng-view>
+                    </div>
+                </div>
+            </div>
+            <div layout="column">
+                <section layout="row" flex>
+                    <md-sidenav class="md-sidenav-left" md-is-open="isSidenavOpen" md-component-id="left" md-disable-backdrop md-whiteframe="4"
+                        style="background-color: #4caf50; width: 280px; min-width: 100px;">
+                        <br>
+                        <br>
+                        <br>
+                        <md-content style="background-color: #4caf50;">
+                            <ul class="nav" style="background-color: #4caf50;">
+                                <li>
+                                    <a class="item_menu" ng-click="toggleLeft()" href="#/" style="color: rgb(255,255,255);">Inicio</a>
+                                </li>
+                                <li>
+                                    <a class="item_menu" ng-click="toggleLeft()" href="#/pedido/consultar_apac" style="color: rgb(255,255,255);">Apac</a>
+                                </li>
+                                <li>
+                                    <a class="item_menu" ng-click="toggleLeft()" href="#/pedido/atendente" style="color: rgb(255,255,255);">Apoio</a>
+                                </li>
+                                <li>
+                                    <a class="item_menu" ng-click="toggleLeft()" href="#/pedido/consultar_mesa" style="color: rgb(255,255,255);">Informações</a>
+                                </li>
+                                <li>
+                                    <a class="item_menu" href="#/" ng-click="logoff()" style="color: rgb(255,255,255);">Sair</a>
+                                </li>
+                            </ul>
+                        </md-content>
+                    </md-sidenav>
+                </section>
+            </div>
+        </div>
+        <div ng-show="usuario.logado">
+            <form class="form-signin" ng-controller="controle_login" ng-init="init()">
+                <div class="container login" style="width:300px">
+                    <h3 class="form-signin-heading"><img src="img/cfast190x131.png" style="position: absolute;"></h3>
+
+                    <label for="inputPassword" class="sr-only">Cartão Sus</label>
+                    <input type="password" placeholder="Cartão Sus" class="login-form" ng-model="usuario.cartaoSus" style="z-index:1; margin-top:160px;"
+                    />
+                    <button class="btn btn-lg btn-primary btn-block" type="button" style="border-radius:5px; height:45px; background-color:#4caf50"
+                        ng-click="logar()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -5,8 +5,10 @@ var core_use = require('cors');
 var sql = require("mssql");
 
 app.use(core_use());
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 var config = {
     server: '172.21.29.26',
@@ -22,14 +24,14 @@ var retorno = {
     response: []
 };
 
-app.get('/consultarCartaoSus', function (req, res) {
+app.post('/consultarCartaoSus', function (req, res) {
     //var request = new testwe.Request();
     sql.connect(config, function (err) {
         var request = new sql.Request();
-        console.log(req.body);
-        console.log('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.body.cartaoSus + '\'');
+        console.log(req.query);
+        console.log('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.query.cartaoSus + '\'');
         // query to the database and get the records ''
-        request.query('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.body.cartaoSus + '\'', function (err, response) {
+        request.query('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.query.cartaoSus + '\'', function (err, response) {
             if (err) {
                 sql.close();
                 console.log(err);

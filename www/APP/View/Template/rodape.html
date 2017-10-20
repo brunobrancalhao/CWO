@@ -1,0 +1,32 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body table-responsive">
+        <table>
+            <tbody>
+                <tr>
+                    <td><span class="data_rodape">Atendente</span></td>
+                    <td class="data_rodape" ng-show="pedido.ci !== '' && pedido.ci !== undefined"><span>Mesa</span></td>
+                    <td class="data_rodape" ng-show="pedido.ID_PEDIDO !== '' && pedido.ID_PEDIDO !== undefined"><span>Pedido</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#/pedido/atendente" class="btn btn-sm btn-success">
+                            <span class="data_rodape">{{pedido.atendente.nome}}</span>
+                        </a>
+                    </td>
+                    <td ng-show="pedido.ci !== '' && pedido.ci !== undefined">
+                        <a href="#/pedido/informar_ci" class="btn btn-sm btn-success">
+                            <span class="data_rodape">{{pedido.ci}}</span>
+                        </a>
+                    </td> 
+                    <td ng-show="pedido.id_pedido !== '' && pedido.id_pedido !== undefined">
+                        <a href="#/pedido/informar_ci" class="btn btn-sm btn-success data_rodape">
+                            {{pedido.id_pedido}}
+                        </a>
+                    </td> 
+                </tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

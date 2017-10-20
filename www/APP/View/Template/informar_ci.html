@@ -1,0 +1,64 @@
+﻿<div ng-init="init(2)" class="panel panel-default panel-body panel-ernetwork">
+    <div class="form-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title line_font_size_list">Pesquisa</h4>
+            </div>
+            <div class="panel-body form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" id="inputDefault" ng-model="search.ci" placeholder="Mesa...">
+                    </div>
+                </div>
+                <div style="display:flex">
+                    <div class="checkbox" style="display:flex; width:80%">
+                        <label>
+                            <input type="checkbox" ng-model="check.status_mesa" ng-true-value="'0'" ng-false-value="''">
+                                <span class="checkbox-material">
+                                    <span class="check check_livre border_radius"></span>
+                                </span> Livre
+                        </label>
+                        <label class="label_margin">
+                            <input type="checkbox" ng-model="check.status_mesa" ng-true-value="'1'" ng-false-value="''">
+                            <span class="checkbox-material">
+                                <span class="check check_aberto border_radius"></span>
+                            </span> Ocupado
+                        </label>
+                        <label class="label_margin">
+                            <input type="checkbox" ng-model="check.status_mesa" ng-true-value="'2'" ng-false-value="''">
+                            <span class="checkbox-material">
+                                <span class="check check_fechado border_radius"></span>
+                            </span> Fechado
+                        </label>
+                    </div>
+                    <div style="text-align:right; width:20%; margin-top: 10px; margin-bottom: 10px;">
+                        <button type="button" class="btn  btn-fab btn_tamanho fa fa-refresh" title="Atualização" ng-click="init(2)" style="color:#4caf50">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title line_font_size_list">Mapa</h4>
+        </div>
+        <div class="panel-body no_padding padding_bottom_top_list">
+            <div class="list-group">
+                <div class="list-group-item list_group_item_padding">
+                    <div ng-repeat="mesa in listaMapaMesa | filter:search | filter:check">
+                        <div class="row-action-primary padding_right_list" style="text-align:center">
+                            <button class="btn btn-fab fa fa-cutlery" style="width:60px; height:60px; font-size:30px; color:white; "
+                                ng-class="{green_status2:(mesa.status_mesa == 0?true:false), red_status2:(mesa.status_mesa == 1?true:false), blue_status2:(mesa.status_mesa == 2?true:false)}"
+                                ng-click="enviarCI(mesa)"></button>
+                            </br>
+                            {{mesa.ci}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'APP/View/Template/rodape.html'"></div>
+</div>

@@ -1,0 +1,1105 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+.panel-ernetwork {
+    min-height:100%; 
+    height:100%; 
+    margin:0 auto 75px
+}
+    
+#sidebar-wrapper {
+    /*background-color: #20A402;*/
+    background-color: #4caf50;
+}
+
+.sidebar-nav li:first-child a {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.sidebar-nav li a {
+    color: #FFF;
+}
+
+
+.form-control {
+    border-bottom: 1px solid #BEBABA;
+}
+
+.right {
+    float: right;
+}
+
+.btn-grid {
+    margin: 1px 1px;
+    width: 63px;
+    height: 35px;
+}
+
+.btn.btn-fab {
+    margin: 0;
+    padding: 6px;
+    font-size: 18px;
+    width: 33px;
+    height: 33px;
+}
+
+.table-scroll {
+    overflow-y: scroll;
+    min-height: 100px;
+    max-height: 500px;
+    display: block;
+}
+
+.form-inline > .btn-fab {
+    padding: 7px;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+}
+
+/*.navbar-right {
+    margin-right: 0px;
+}*/
+.container-fluid {
+    padding-top: 75px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.hamburger {
+    top: 16px;
+}
+
+.container_nav {
+    width: 100%;
+    height: 65px;
+    /*background: #20A402;*/
+    background: #4caf50;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.sidebar-nav > .sidebar-brand > a {
+    height: 65px;
+    line-height: 30px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 0px;
+}
+
+.logo {
+    float: right;
+    margin-top: 12px;
+    margin-right: 10px;
+    /* width: 56px;
+    height: 39px; */
+}
+
+.alertify .ajs-header {
+    background-color: #689B55;
+    color: white;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.no_padding {
+    padding: 15px 0 0 0;
+}
+
+
+.green_status2{
+    background: #4caf50 !important;
+}
+.red_status2{
+    background: #F44336 !important;
+}
+
+.blue_status2{
+    background: #2196F3 !important;
+}
+
+.list-group .list-group-item .row-action-primary.red_status button {
+    background: #F44336;
+}
+
+.list-group .list-group-item .row-action-primary.blue_status button {
+    background: #2196F3;
+}
+
+.list-group .list-group-item .row-action-primary.green_status button {
+    background: #4caf50;
+}
+
+.row-content .list-group hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ .btn-pizza-1 {
+    background-color: #fff;
+}
+.btn-pizza-2 {
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, transparent 49%, #fff 49%, #fff 51%, transparent 52%);
+}
+.btn-pizza-3 {
+    background-color: #fff;
+    background-image: 
+        linear-gradient(to right, transparent 49%, #fff 49%, #fff 51%, transparent 52%),
+        linear-gradient(to bottom,transparent 49%, #fff 49%, #fff 51%, transparent 52%);
+}
+.btn-pizza-4 {
+    background-color: #fff;
+    background-image: 
+        linear-gradient(to right, transparent 49%, #fff 49%, #fff 51%, transparent 52%),
+        linear-gradient(to bottom,transparent 49%, #fff 49%, #fff 51%, transparent 52%),
+        linear-gradient(45deg,transparent 49%, #fff 49%, #fff 51%, transparent 52%),
+        linear-gradient(135deg,transparent 49%, #fff 49%, #fff 51%, transparent 52%);
+}
+.btn-pizza-5 {
+    background-color: #fff;
+    background-image: 
+        linear-gradient(to right,  #4caf50 46%, #fff 51%, transparent 52%),
+        linear-gradient(to bottom,transparent 49%, #fff 49%, #fff 51%, transparent 52%);
+}
+.btn-pizza-5 {
+    background-color: #fff;
+    background-image: 
+        linear-gradient(to right,  #4caf50 46%, #fff 51%, transparent 52%),
+        linear-gradient(to bottom,transparent 49%, #fff 49%, #fff 51%, transparent 52%);
+}
+
+.btn-alterar-fonte-aumentar{
+    font-size: 165%;
+    margin-top: -4px;
+    background-color: Transparent;
+    float: right;
+    border:none;
+}
+
+.btn-alterar-fonte-diminuir{
+    font-size: 135%;
+    background-color: Transparent;
+    float: right;
+    border:none;
+}
+
+.list-group .list-group-separator.cor_black_separador {
+    background-color: #009688;
+    margin-top: 5px;
+    height: 2px;
+}
+
+.row-content .list-group.margem_bottom_list_group {
+    margin-bottom: 0px;
+}
+
+.list-group .list-group-item .row-content .least-content.data_fonte_list {
+    font-size: 10px;
+}
+
+.list-group .list-group-item.list_group_item_padding {
+    padding: 0 3px;
+}
+
+.list-group .list-group-item .row-picture img,
+.list-group .list-group-item .row-action-primary img,
+.list-group .list-group-item .row-picture button,
+.list-group .list-group-item .row-action-primary button,
+.list-group .list-group-item .row-picture label,
+.list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+    width: 33px;
+    height: 33px;
+}
+
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button.line_height_list {
+        line-height: 32px;
+    }
+
+.list-group .list-group-item .list-group-item-heading.line_font_size_list {
+    font-size: 16px;
+}
+
+.list-group .list-group-item .row-picture img,
+.list-group .list-group-item .row-action-primary img,
+.list-group .list-group-item .row-picture button,
+.list-group .list-group-item .row-action-primary button,
+.list-group .list-group-item .row-picture label,
+.list-group .list-group-item .row-action-primary label.tamanho_icone_lista.margim_bottom {
+    margin-bottom: 3px;
+}
+
+.list-group .list-group-item .row-picture,
+.list-group .list-group-item .row-action-primary.padding_right_list {
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.no_padding.padding_bottom_top_list {
+    padding: 10px 0 0 0;
+}
+
+.list-group .list-group-item .row-action-primary.red_status button.green_status,
+.list-group .list-group-item .row-action-primary.blue_status button.green_status {
+    background: #4caf50;
+}
+
+.btn.btn-fab.btn_tamanho {
+    font-size: 20px;
+}
+
+.panel.panel-info.margim_panel {
+    margin: 10px 1px 10px 1px;
+}
+
+.panel-body {
+    padding: 5px;
+}
+
+.panel-collapse {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.panel-body.padding_panel {
+    margin: 1px 1px 1px 1px;
+    padding: 0px;
+}
+
+.table.margim_bottom_table {
+    margin-bottom: 0px;
+    font-size: 11px;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_livre,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_livre {
+    color: #689B55;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_livre:before,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_livre:before {
+    color: #689B55;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_fechado,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_fechado {
+    color: #2196F3;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_fechado:before,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_fechado:before {
+    color: #2196F3;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_aberto,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_aberto {
+    color: #F44336;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_aberto:before,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_aberto:before {
+    color: #F44336;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_finalizado,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_finalizado {
+    color: #000000;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check.check_finalizado:before,
+.checkbox-default input[type=checkbox]:checked + .checkbox-material .check.check_finalizado:before {
+    color: #000000;
+}
+.icoMenu {
+  position: fixed;
+  top: 20px;  
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.label_margin {
+    margin-left: 15px;
+}
+
+.checkbox .checkbox-material .check.border_radius {
+    border-radius: 10px;
+}
+
+.btn.btn-default.btn-fab.btn-raised.button_obs {
+    font-size: 22px;
+    padding: 7px 7px;
+}
+
+.list-group-item.list_group_item_padding.margim_padding {
+    padding: 0 10px;
+}
+
+.btn.btn-default.btnGrupo {
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    text-align: left;
+    padding-left: 10px;
+    background-color: rgba(42, 156, 146, 0.55);
+    font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.panel-heading.painelTitleGrupo {
+    padding: 0px 0px 0px 0px;
+}
+
+.list-group .list-group-item .row-content.rowGrupo {
+    width: 100%;
+}
+
+.btn-default.btnGrupo:hover:not(.btn-link):not(.btn-flat) {
+    background-color: rgba(74, 162, 155, 0.42);
+}
+
+.btn.btn-default.btnSubGrupo {
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    text-align: left;
+    padding-left: 10px;
+    font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.btn.btn-default.habilita_opcao {
+    background: #176AAC;
+}
+
+
+.btn.btn-default.habilita_fatias {
+    background: #250879;
+}
+
+
+.btn.btn-default.nao_habilita_opcao {
+    background-color: rgb(86, 142, 135);
+}
+
+.btn-default.btnSubGrupo:hover:not(.btn-link):not(.btn-flat) {
+    background-color: rgba(74, 162, 155, 0.22);
+}
+
+.btn.btn-default.btnProduto {
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 20px 0px;
+    text-align: left;
+    padding-left: 10px;
+    font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: inherit;
+    background: #E7E9EA;
+}
+
+.btn.btn-default.btnProdutoSelecionado {
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 20px 0px;
+    text-align: left;
+    padding-left: 10px;
+    font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: inherit;
+    background: #E7E9EA;
+    color: red;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th.produto {
+    padding: 0px;
+}
+
+.spanProduto {
+    margin-left: 15px;
+}
+
+.list-group.margim_bottom_0 {
+    margin-bottom: 0px;
+}
+
+.btn.btn-default.btn-fab.btn-raised.button_save {
+    font-size: 22px;
+    padding: 7px 7px;
+}
+
+.modal-body.modal_body_Opcao {
+    height: auto;
+    padding: 0 0 0 0;
+}
+
+.modal-content.modalContentOpcao {
+    height: auto;
+}
+
+.btn.btn-default.btn-lg.btn-block.buttonOpcao {
+    border: 1px solid #eee;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+h5, h6.hOpcao {
+    margin: 1px 0 0 1px;
+}
+
+.panel-body.panel_paddin {
+    padding: 10px 0 0 0;
+}
+
+hr.Opcao {
+    margin: 0 0 0 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd).SABOR, .SABOR {
+    background-color: rgba(175,238,238,1);
+}
+
+    .table-striped > tbody > tr:nth-of-type(odd).SABOR:hover, .SABOR:hover {
+        background-color: rgba(175,228,238,1);
+    }
+
+.table-striped > tbody > tr:nth-of-type(odd).ADICIONAR, .ADICIONAR {
+    background-color: rgba(144,238,144,1);
+}
+
+    .table-striped > tbody > tr:nth-of-type(odd).ADICIONAR:hover, .ADICIONAR:hover {
+        background-color: rgba(144,238,124,1);
+    }
+
+.table-striped > tbody > tr:nth-of-type(odd).RETIRAR, .RETIRAR {
+    background-color: #DF6F6F;
+}
+
+.btn.btn_comando_linha.btn_comando_linha {
+    margin-top: 25px;
+}
+
+.descricao_produto_personalizar {
+    font-size: 20px;
+    padding: 7px;
+    border-bottom: 1px solid #C1B5B5;
+}
+
+.panel.panel-default.panel_grupo_produto {
+    border: 3px solid green;
+}
+
+.panel.panel-default.panel_interno_subgrupo {
+    width: 98%;
+    margin-left: 1%;
+}
+
+.versao {
+    float:right;
+    clear:right;
+    margin-right:19px;
+    font-size: 12px;
+    text-shadow:1px 1px green;
+}
+
+.login-form:focus {
+    border-color: #009688;
+    box-shadow: 0 1px 13px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 13px rgba(0,0,0,.2);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.login-form{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    margin-top:4px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form.lf1{
+    margin-top:160px;
+    text-transform: uppercase;
+}
+
+.form-signin-heading{
+    /*position:absolute; */
+    /* top:-70px; */
+    margin-left:40px;
+    z-index:-1;
+    left:auto;
+    right:auto;
+}
+
+/*rodapé*/
+
+#wrapper{
+    min-height:100%;
+    height:auto !important;
+    margin: 0 auto -62px;
+}
+
+body .well-material-yellow-50, .container .well-material-yellow-50, .container-fluid 
+.well-material-yellow-50, body .jumbotron-material-yellow-50, .container 
+.jumbotron-material-yellow-50, .container-fluid .jumbotron-material-yellow-50{
+    padding: 5px;
+    width:98%;
+    margin: 0 auto;
+    margin-bottom:7px;
+    display:block;
+    clear:both;
+}
+
+body .well p, .container .well p, .container-fluid .well p, body .jumbotron p, .container .jumbotron p, .container-fluid .jumbotron p{
+    font-size: 11px;
+    margin:5px;
+}
+
+/*Adaptações devices menores*/
+/*Gabriel Souza  08/08/2017 */
+@media  (width:541px) {/*tablet maiores*/
+
+    /*general*/
+    .nav>li>a.item_menu {
+        padding-top:25px;
+        padding-bottom:25px;
+        font-size: 22px;
+    }
+    .nav.sidebar-nav{
+        width:100%;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        width: 250px;
+    }
+    .hamburger.is-open{
+        left:250px;
+    }
+
+    /*Consulta produto/cardapio*/
+    .ng-scope h4{
+        font-size: 23px;
+    }
+    .btn.btn-default.btnGrupo{
+        font-size: 22px;
+    }
+    .btn.btn-default.btnSubGrupo{
+        font-size: 21px;
+    }
+    .table-header{
+        font-size:20px;
+    }
+    .btn.btn-default.btnProduto{
+        font-size: 20px;
+        white-space:normal;
+    }
+    .irredutivel{
+        min-width:140px;
+    }
+    .valor_venda{
+        font-size: 20px;
+    }
+
+    /*informar atendente / CI */
+    .control-label{
+        clear:both;
+        font-size:20px;
+    }
+    .form-control{
+        font-size:21px;
+        height: 45px;
+    }
+    .btn.btn-fab{
+        width: 55px;
+        height: 55px;
+    }
+    .mdi-content-clear:before{
+        padding:16px;
+    }
+
+    /*modal opcao*/
+    .btn.btn-default.btn-lg.btn-block.buttonOpcao{
+        margin:2px;
+        border:1px groove;
+    }
+    .hOpcao{
+        font-size: 19px;
+    }
+
+    /*mesa*/
+    .checkbox label{
+        font-size: 15px;
+    }
+    
+    .panel-title{
+        font-size: 23px;
+     
+    }
+    
+    .panel-heading{
+        font-size: 20px;
+    }
+
+    .btn.btn-default.btnGrupo {
+        width: 100%;
+        height: 100%;
+        margin: 0px 0px 0px 0px;
+        text-align: left;
+        padding-left: 10px;
+        background-color: rgba(42, 156, 146, 0.55);
+        font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        color: white;
+    }
+
+    .list-group .list-group-item .row-picture img,
+    .list-group .list-group-item .row-action-primary img,
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button,
+    .list-group .list-group-item .row-picture label,
+    .list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+        width: 60px;
+        height: 60px;
+    }
+    .list-group .list-group-item .list-group-item-heading.line_font_size_list{
+        font-size:22px;
+        height: 26px;
+
+    }
+    .list-group .list-group-item{
+        font-size:19px;
+    }
+    .list-group-item>.badge{
+        font-size:16px;
+    }
+    .list-group .list-group-item .row-content .least-content.data_fonte_list{
+        font-size:16px;
+    }
+    .table.margim_bottom_table{
+        font-size:16px;
+    }
+    .panel.panel-info.margim_panel{
+        clear:left;
+    }
+
+    /*pedido*/
+    .table > tbody > tr > td, .table > tbody > tr > th, 
+    .table > tfoot > tr > td, .table > tfoot > tr > th, 
+    .table > thead > tr > td, .table > thead > tr > th.produto{
+        font-size:16px;
+    }
+
+    /*rodape*/
+     .data_rodape{
+         font-size:19px !important;
+     }
+
+     /*login*/
+     .container.login>.checkbox .checkbox-material .check{
+         margin-bottom:2px
+     }
+
+    .login-form{
+        font-size:16px;
+    }
+}
+
+/*Gabriel Souza - 01/02/2017 - Criando identificação para tablets positivo T725 resolução 600 X 1024 */
+@media (orientation: landscape) and (width: 600px) { /*tablets maiores*/
+    .col-xs-5>.input-group{
+        top:35px;
+    }
+}
+
+@media (orientation: portrait){
+    .btn.btn-default.btnProduto{
+    max-width:240px;
+    }
+}
+
+@media (width: 600px) {/*tablet maiores*/
+
+    /*general*/
+    .nav>li>a.item_menu {
+        padding-top:25px;
+        padding-bottom:25px;
+        font-size: 22px;
+    }
+    .nav.sidebar-nav{
+        width:100%;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        width: 250px;
+    }
+    .hamburger.is-open{
+        left:250px;
+    }
+
+    /*Consulta produto/cardapio*/
+    .ng-scope h4{
+        font-size: 23px;
+    }
+    .btn.btn-default.btnGrupo{
+        font-size: 22px;
+    }
+    .btn.btn-default.btnSubGrupo{
+        font-size: 21px;
+    }
+    .table-header{
+        font-size:20px;
+    }
+    .btn.btn-default.btnProduto{
+        font-size: 20px;
+        white-space:normal;
+    }
+    .irredutivel{
+        min-width:140px;
+    }
+    .valor_venda{
+        font-size: 20px;
+    }
+
+    /*informar atendente / CI */
+    .control-label{
+        clear:both;
+        font-size:20px;
+    }
+    .form-control{
+        font-size:21px;
+    }
+    .btn.btn-fab{
+        width: 65px;
+        height: 65px;
+    }
+    .mdi-content-clear:before{
+        padding:16px;
+    }
+
+    /*modal opcao*/
+    .btn.btn-default.btn-lg.btn-block.buttonOpcao{
+        margin:2px;
+        border:1px groove;
+    }
+    .hOpcao{
+        font-size: 19px;
+    }
+
+    /*mesa*/
+    .checkbox label{
+        font-size: 20px;
+    }
+    .panel-heading{
+        font-size: 20px;
+    }
+    .list-group .list-group-item .row-picture img,
+    .list-group .list-group-item .row-action-primary img,
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button,
+    .list-group .list-group-item .row-picture label,
+    .list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+        width: 60px;
+        height: 60px;
+    }
+    .list-group .list-group-item .list-group-item-heading.line_font_size_list{
+        font-size:20px;
+    }
+    .list-group .list-group-item{
+        font-size:19px;
+    }
+    .list-group-item>.badge{
+        font-size:16px;
+    }
+    .list-group .list-group-item .row-content .least-content.data_fonte_list{
+        font-size:16px;
+    }
+    .table.margim_bottom_table{
+        font-size:16px;
+    }
+    .panel.panel-info.margim_panel{
+        clear:left;
+    }
+
+    /*pedido*/
+    .table > tbody > tr > td, .table > tbody > tr > th, 
+    .table > tfoot > tr > td, .table > tfoot > tr > th, 
+    .table > thead > tr > td, .table > thead > tr > th.produto{
+        font-size:19px;
+    }
+
+    /*rodape*/
+     .data_rodape{
+         font-size:19px !important;
+     }
+
+     /*login*/
+     .container.login>.checkbox .checkbox-material .check{
+         margin-bottom:2px
+     }
+
+    .login-form{
+        font-size:20px;
+    }
+}
+
+@media (orientation: landscape) and (max-resolution:75dpi){
+    
+    .col-xs-5>.input-group{
+        top:35px;
+    }
+
+}
+
+@media (orientation: portrait){
+    .btn.btn-default.btnProduto{
+    max-width:240px;
+    }
+}
+
+@media (max-resolution:75dpi){/*tablet*/
+
+    /*general*/
+    .nav>li>a.item_menu {
+        padding-top:25px;
+        padding-bottom:25px;
+        font-size: 22px;
+    }
+    .nav.sidebar-nav{
+        width:100%;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        width: 330px;
+    }
+    .hamburger.is-open{
+        left:330px;
+    }
+
+    /*Consulta produto/cardapio*/
+    .ng-scope h4{
+        font-size: 23px;
+    }
+    .btn.btn-default.btnGrupo{
+        font-size: 22px;
+    }
+    .btn.btn-default.btnSubGrupo{
+        font-size: 21px;
+    }
+    .table-header{
+        font-size:20px;
+    }
+    .btn.btn-default.btnProduto{
+        font-size: 20px;
+        white-space:normal;
+    }
+    .irredutivel{
+        min-width:140px;
+    }
+    .valor_venda{
+        font-size: 20px;
+    }
+
+    /*informar atendente / CI */
+    .control-label{
+        clear:both;
+        font-size:20px;
+    }
+    .form-control{
+        font-size:21px;
+    }
+    .btn.btn-fab{
+        width: 65px;
+        height: 65px;
+    }
+    .mdi-content-clear:before{
+        padding:16px;
+    }
+
+    /*modal opcao*/
+    .btn.btn-default.btn-lg.btn-block.buttonOpcao{
+        margin:2px;
+        border:1px groove;
+    }
+    .hOpcao{
+        font-size: 19px;
+    }
+
+    /*mesa*/
+    .checkbox label{
+        font-size: 20px;
+    }
+    .panel-heading{
+        font-size: 20px;
+    }
+    .list-group .list-group-item .row-picture img,
+    .list-group .list-group-item .row-action-primary img,
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button,
+    .list-group .list-group-item .row-picture label,
+    .list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+        width: 80px;
+        height: 80px;
+    }
+    .list-group .list-group-item .list-group-item-heading.line_font_size_list{
+        font-size:20px;
+    }
+    .list-group .list-group-item{
+        font-size:19px;
+    }
+    .list-group-item>.badge{
+        font-size:16px;
+    }
+    .list-group .list-group-item .row-content .least-content.data_fonte_list{
+        font-size:16px;
+    }
+    .table.margim_bottom_table{
+        font-size:16px;
+    }
+    .panel.panel-info.margim_panel{
+        clear:left;
+    }
+
+    /*pedido*/
+    .table > tbody > tr > td, .table > tbody > tr > th, 
+    .table > tfoot > tr > td, .table > tfoot > tr > th, 
+    .table > thead > tr > td, .table > thead > tr > th.produto{
+        font-size:19px;
+    }
+
+    /*rodape*/
+     .data_rodape{
+         font-size:19px !important;
+     }
+
+     /*login*/
+     .container.login>.checkbox .checkbox-material .check{
+         margin-bottom:2px
+     }
+
+    .login-form{
+        font-size:20px;
+    }
+}
+
+@media (min-resolution:150dpi) {/*celulares*/
+    
+    .table-header, .btn.btn-default.btnProduto, .valor_venda{
+        font-size:12px;
+    }
+
+    .btn.btn-default.btnProduto{
+        white-space:normal;
+    }
+
+    .nav>li>a.item_menu {
+        padding-top:15px;
+        padding-bottom:15px;
+        font-size: 20px;
+    }
+    .table > tbody > tr > td, .table > tbody > tr > th, 
+    .table > tfoot > tr > td, .table > tfoot > tr > th, 
+    .table > thead > tr > td, .table > thead > tr > th.produto{
+        font-size:12px;
+        font-weight:normal;
+    }
+    .btn.btn-fab{
+        width: 50px;
+        height: 50px;
+    }
+    .mdi-content-clear:before{
+        padding:6px;
+    }
+    .list-group .list-group-item .row-picture img,
+    .list-group .list-group-item .row-action-primary img,
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button,
+    .list-group .list-group-item .row-picture label,
+    .list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+        width: 50px;
+        height: 50px;
+    }
+    .panel.panel-info.margim_panel{
+        clear:left;
+    }
+    .irredutivel{
+        min-width:120px;
+    }
+}
+
+@media (max-width:400px){ /*celulares ridículos de pequenos*/
+    
+    .table-header, .btn.btn-default.btnProduto, .valor_venda{
+        font-size:12px;
+    }
+    .btn.btn-default.btnProduto{
+        white-space:normal;
+    }
+    .nav>li>a.item_menu {
+        padding-top:15px;
+        padding-bottom:15px;
+        font-size: 20px;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        width: 220px;
+    }
+    .hamburger.is-open{
+        left:220px;
+    }
+    .table > tbody > tr > td, .table > tbody > tr > th, 
+    .table > tfoot > tr > td, .table > tfoot > tr > th, 
+    .table > thead > tr > td, .table > thead > tr > th.produto{
+        font-size:12px;
+        font-weight:normal;
+    }
+    .btn.btn-fab{
+        width: 40px;
+        height: 40px;
+    }
+    .mdi-content-clear:before{
+        padding:5px;
+    }
+    .list-group .list-group-item .row-picture img,
+    .list-group .list-group-item .row-action-primary img,
+    .list-group .list-group-item .row-picture button,
+    .list-group .list-group-item .row-action-primary button,
+    .list-group .list-group-item .row-picture label,
+    .list-group .list-group-item .row-action-primary label.tamanho_icone_lista {
+        width: 45px;
+        height: 45px;
+    }
+    .panel.panel-info.margim_panel{
+        clear:left;
+    }
+    .irredutivel{
+        min-width:120px;
+    }
+}

@@ -1,0 +1,174 @@
+﻿<div ng-controller="controle_produto_opcao">
+    <div ng-init="init()">
+        <div class="modal" id="modal_opcao" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Opção {{pr.descricao}}</h4>
+                        <h5></h5>
+                    </div>
+                    <div class="modal-body modal_body_Opcao">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+
+                                <ul class="list-group">
+                                    <li ng-show="op1.ativo" class="list-group-item row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <button class="btn btn-default btn-lg btn-block buttonOpcao" ng-click="btn_click_opcao_add(valor_1.valor,descricao_1.descricao,1, op_1_qtde.valor)">
+                                                    <h6 class="hOpcao">
+                                                        <b>{{descricao_1.descricao}}</b>
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        {{valor_1.valor | currency:'R$ '}}
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        PARTIÇÕES {{op_1_qtde.valor}}
+                                                    </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_remove(valor_1.valor,descricao_1.descricao,1, op_1_qtde.valor)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                </div>
+                                                <input style="text-align: center; background: #E7E9EA" type="number" ng-model="quantidade_1.valor" class="form-control" id="input_quantidade" value="0" min="0" ng-disabled="true"/>
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_add(valor_1.valor,descricao_1.descricao,1, op_1_qtde.valor)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="Opcao">
+                                    </li>
+                                    <li ng-show="op2.ativo" class="list-group-item row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <button class="btn btn-default btn-lg btn-block buttonOpcao" ng-click="btn_click_opcao_add(valor_2.valor,descricao_2.descricao,2,op_2_qtde.valor)">
+                                                    <h6 class="hOpcao">
+                                                        <b>{{descricao_2.descricao}}</b>
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        {{valor_2.valor | currency:'R$ '}}
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        PARTIÇÕES {{op_2_qtde.valor}}
+                                                    </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_remove(valor_2.valor,descricao_2.descricao,2, op_2_qtde.valor)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                </div>
+                                                <input style="text-align: center; background: #E7E9EA" type="number" ng-model="quantidade_2.valor" class="form-control" id="input_quantidade" value="0" min="0" ng-disabled="true"/>
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_add(valor_2.valor,descricao_2.descricao,2, op_2_qtde.valor)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="Opcao">
+                                    </li>
+
+                                    <li ng-show="op3.ativo" class="list-group-item row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <button class="btn btn-default btn-lg btn-block buttonOpcao" ng-click="btn_click_opcao_add(valor_3.valor,descricao_3.descricao,3, op_3_qtde.valor)">
+                                                    <h6 class="hOpcao">
+                                                        <b>{{descricao_3.descricao}}</b>
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        {{valor_3.valor | currency:'R$ '}}
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        PARTIÇÕES {{op_3_qtde.valor}}
+                                                    </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_remove(valor_3.valor,descricao_3.descricao,3, op_3_qtde.valor)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                </div>
+                                                <input style="text-align: center; background: #E7E9EA" type="number" ng-model="quantidade_3.valor" class="form-control" id="input_quantidade"  value="0" min="0" ng-disabled="true" />
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_add(valor_3.valor,descricao_3.descricao,3, op_3_qtde.valor)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="Opcao">
+                                    </li>
+
+                                    <li ng-show="op4.ativo" class="list-group-item row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <button class="btn btn-default btn-lg btn-block buttonOpcao" ng-click="btn_click_opcao_add(valor_4.valor,descricao_4.descricao,4, op_4_qtde.valor)">
+                                                    <h6 class="hOpcao">
+                                                        <b>{{descricao_4.descricao}}</b>
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        {{valor_4.valor | currency:'R$ '}}
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        PARTIÇÕES {{op_4_qtde.valor}}
+                                                    </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_remove(valor_4.valor,descricao_4.descricao,4, op_4_qtde.valor)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                </div>
+                                                <input style="text-align: center; background: #E7E9EA" type="number" ng-model="quantidade_4.valor" class="form-control" id="input_quantidade"  value="0" min="0" ng-disabled="true" />
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_add(valor_4.valor,descricao_4.descricao,4, op_4_qtde.valor)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="Opcao">
+                                    </li>
+
+                                    <li ng-show="op5.ativo" class="list-group-item row">
+                                        <div class="col-xs-6">
+                                            <div ng-show="op5.ativo" class="form-group">
+                                                <button class="btn btn-default btn-lg btn-block buttonOpcao" ng-click="btn_click_opcao_add(valor_5.valor,descricao_5.descricao,5,op_5_qtde.valor)">
+                                                    <h6 class="hOpcao">
+                                                        <b>{{descricao_5.descricao}}</b>
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        {{valor_5.valor | currency:'R$ '}}
+                                                    </h6>
+                                                    <h6 class="hOpcao">
+                                                        PARTIÇÕES {{op_5_qtde.valor}}
+                                                    </h6>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="input-group">
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_remove(valor_5.valor,descricao_5.descricao,5, op_5_qtde.valor)" class="btn btn-danger btn-fab btn-raised fa fa-minus"></button>
+                                                </div>
+                                                <input style="text-align: center; background: #E7E9EA" type="number" ng-model="quantidade_5.valor" class="form-control" id="input_quantidade" value="0" min="0" ng-disabled="true" />
+                                                <div class="input-group-btn">
+                                                    <button ng-click="btn_click_opcao_add(valor_5.valor,descricao_5.descricao,5, op_5_qtde.valor)" class="btn btn-success btn-fab btn-raised fa fa-plus"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

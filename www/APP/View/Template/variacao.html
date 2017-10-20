@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Especifique a variação</h4>
+            <h5>{{produto.descricao}}</h5>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Tipos</label>
+                <div class="col-lg-10">
+                    <div class="radio radio-primary">
+                        <label>
+                                <input type="radio" name="option_incluir_variacao" ng-model="produto.variacao" id="option_incluir_variacao" value="ADICIONAR" checked="true">
+                                Adicionar<span class="circle"></span><span class="check"></span>
+                            </label>
+                    </div>
+                    <div class="radio radio-primary">
+                        <label>
+                                <input type="radio" name="option_excluir_variacao" ng-model="produto.variacao" id="option_excluir_variacao" value="RETIRAR">
+                                Remover<span class="circle"></span><span class="check"></span>
+                            </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" ng-click="adicioar_produto_lista(produto)" class="btn btn-primary btn_salvar_produto_variacao" data-dismiss="modal">Salvar</button>
+        </div>
+    </div>
+</div>
