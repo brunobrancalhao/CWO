@@ -42,36 +42,44 @@ APACwo.controller('controle_login', function ($scope, $rootScope, $http, $cookie
     $scope.logar = function () {
         var expireDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toString();
         expireDate = expireDate.substring(0, expireDate.lastIndexOf('('))
-        $http({
-            method: 'POST',
-            url: $rootScope.link_apis + 'consultarCartaoSus',
-            params: {
-                cartaoSus: $scope.usuario.cartaoSus
-            }
-        }).then(function successCallback(response) {
-            $scope.usuario = response.data.response[0];
+        if ($scope.usuario == undefined) {
+            alertify.error('Digite um cartão Sus Valido!');
+        }
+        else {
+            $http({
+                method: 'POST',
+                url: $rootScope.link_apis + 'consultarCartaoSus',
+                params: {
+                    cartaoSus: $scope.usuario.cartaoSus
+                }
+            }).then(function successCallback(response) {
+                $scope.usuario = response.data.response[0];
 
-            $scope.usuario = $scope.usuario[0];
-            $localStorage.usuario = $scope.usuario;
-            if ($scope.usuario != undefined) {
-                console.log($scope.usuario);
-                alertify.confirm("Seu nome é : " + $scope.usuario.NOME_PACIENTE + " ?").set('labels', { ok: 'Sim', cancel: 'Não' })
-                .set('onok', function () {
-                    $rootScope.$apply(function () {
-                        $rootScope.usuario.logado = true;
-                        $localStorage.usuario = $scope.usuario;
-                        $cookies.put('cartaoSus', $scope.usuario.cartaoSus);
-                        alertify.success('Seja Bem Vindo!!!');
-                    })
-                })
+                $scope.usuario = $scope.usuario[0];
+                $localStorage.usuario = $scope.usuario;
+                if ($scope.usuario != undefined) {
+                    alertify.confirm("Seu nome é : " + $scope.usuario.NOME_PACIENTE + " ?").set('labels', { ok: 'Sim', cancel: 'Não' })
+                        .set('onok', function () {
+                            $rootScope.$apply(function () {
+                                $rootScope.usuario.logado = true;
+                                $localStorage.usuario = $scope.usuario;
+                                $cookies.put('cartaoSus', $scope.usuario.cartaoSus);
+                                alertify.success('Seja Bem Vindo!!!');
+                            })
+                        })
 
-            }
-        }, function errorCallback(response) {
-            alertify.error(response.data);
+                } else {
 
-            $timeout(function () {
-                location.reload();
-            }, 500)
-        });
+                    alertify.error('Cartão Sus invalido!');
+                }
+
+            }, function errorCallback(response) {
+                alertify.error(response.data);
+
+                $timeout(function () {
+                    location.reload();
+                }, 500)
+            });
+        }
     };
 });

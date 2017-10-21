@@ -11,7 +11,6 @@
         if (isSidenavOpen == true) {
             document.getElementById('imagemMenu').className = 'fa fa-times';
         } else {
-
             document.getElementById('imagemMenu').className = 'fa fa-bars';
         }
     });
