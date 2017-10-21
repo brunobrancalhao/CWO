@@ -76,9 +76,9 @@
     <!--FIM - APLICAÇÃO-->
 </head>
 
-<body class="body_pw" id="body_pw" style="height:100%; background-image:url(img/cfast_bkg402x800.png);">
-    <div id="wrapper" class="wrap" style="background-image:url(img/cfast_bkg402x800.png);">
-        <div ng-hide="usuario.logado" ng-controller="controle_menu">
+<body class="body_pw" id="body_pw" style="height:100%; background-image:url(img/cfast_bkg402x800.JPG);">
+    <div id="wrapper" class="wrap" style="background-image:url(img/cfast_bkg402x800.JPG);">
+        <div ng-hide="!usuario.logado" ng-controller="controle_menu">
             <div id="page-content-wrapper">
                 <div class="container_nav sty">
                     <div class="row-action-primary padding_right_list" style="text-align:center">
@@ -86,11 +86,11 @@
                             <li>
                                 <div ng-hide="menu_alternativo">
                                     <button type="button" class="icoMenu" data-toggle="offcanvas" ng-click="toggleLeft()" id="BotaoMenu">
-                                         <i class="fa fa-bars" aria-hidden="true" style="font-size:40px; margin-top: -8px; " id="imagemMenu"></i>
+                                        <i class="fa fa-bars" aria-hidden="true" style="font-size:40px; margin-top: -8px; " id="imagemMenu"></i>
                                     </button>
                                 </div>
                                 <div id="ImgLogoDireito">
-                                    <a href="#/"><img class="logo" src="img/cfast60x41.png" style="margin-top: -8px;"/></a>
+                                    <a href="#/"><img class="logo" src="img/logo60x41.png" style="margin-top: -8px;"/></a>
                                 </div>
                             </li>
                             <li>
@@ -134,13 +134,15 @@
                 </section>
             </div>
         </div>
-        <div ng-show="usuario.logado">
+        <div ng-show="!usuario.logado">
             <form class="form-signin" ng-controller="controle_login" ng-init="init()">
                 <div class="container login" style="width:300px">
-                    <h3 class="form-signin-heading"><img src="img/cfast190x131.png" style="position: absolute;"></h3>
+                    <h3 class="form-signin-heading">
+                        <img src="img/logo_3-iloveimg-resized (1).png" style="position: absolute;">
+                    </h3>
 
                     <label for="inputPassword" class="sr-only">Cartão Sus</label>
-                    <input type="password" placeholder="Cartão Sus" class="login-form" ng-model="usuario.cartaoSus" style="z-index:1; margin-top:160px;"
+                    <input type="text" placeholder="Cartão Sus" class="login-form" ng-model="usuario.cartaoSus" style="z-index:1; margin-top:160px;"
                     />
                     <button class="btn btn-lg btn-primary btn-block" type="button" style="border-radius:5px; height:45px; background-color:#4caf50"
                         ng-click="logar()">Login</button>
@@ -149,4 +151,5 @@
         </div>
     </div>
 </body>
+
 </html>

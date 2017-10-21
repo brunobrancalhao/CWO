@@ -4,8 +4,8 @@
             alertify.confirm("Deseja realmente sair?").set('labels', { ok: 'SIM', cancel: 'NÃO' })
                 .set('onok', function () {
                     $rootScope.$apply(function () {
-                        $rootScope.usuario = {};
-                        $localStorage.usuario = {};
+                        $rootScope.usuario = { logado: false };
+                        $localStorage.usuario = { logado: false };
                         $cookies.put('cartaoSus', "")
                     })
                 })
@@ -15,41 +15,25 @@
 
 APACwo.controller('controle_login', function ($scope, $rootScope, $http, $cookies, aux, $location, $timeout, $localStorage) {
     $rootScope.nomeTela = 'Início';
-
+    $scope.usuario.cartaoSus = $cookies.get('cartaoSus');
     $scope.init = function () {
         $http({
             method: 'POST',
             url: $rootScope.link_apis + 'consultarCartaoSus',
             params: {
-                cartaoSus: $localStorage.usuario.cartaoSus
+                cartaoSus: $scope.usuario.cartaoSus
             }
         }).then(function successCallback(response) {
-            console.log(response.data.response[0]);
-            $rootScope.listaUsuario = response.data.resultado;
+            $scope.usuario = response.data.response[0];
 
-            $scope.guardaLogin = true;
-
-            if ($cookies.get('cartaoSus') === undefined && $localStorage.usuario === undefined) {
-                $localStorage.usuario = {};
-                $localStorage.usuario.logado = "false";
+            $scope.usuario = $scope.usuario[0];
+            $localStorage.usuario = $scope.usuario;
+            if ($scope.usuario != undefined) {
+                $rootScope.usuario.logado = true;
+                $localStorage.usuario = $scope.usuario;
+                $cookies.put('cartaoSus', $scope.usuario.cartaoSus);
+                alertify.success('Seja Bem Vindo!!!');
             }
-            else
-                $localStorage.usuario.cartaoSus = $cookies.get('cartaoSus')
-
-            if ($localStorage.usuario.logado !== "true") {
-                $rootScope.usuario = {};
-                $localStorage.usuario = {};
-
-                $localStorage.usuario.cartaoSus = $cookies.get('cartaoSus');
-
-                if ($localStorage.usuario.id_usuario === undefined || $localStorage.usuario.id_usuario === "")
-                    $rootScope.usuario = $rootScope.listaUsuario;
-                else
-                    $rootScope.usuario = $localStorage.usuario;
-            }
-            else
-                $rootScope.usuario = $localStorage.usuario;
-
         }, function errorCallback(response) {
             console.log(response);
         });
@@ -58,7 +42,6 @@ APACwo.controller('controle_login', function ($scope, $rootScope, $http, $cookie
     $scope.logar = function () {
         var expireDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toString();
         expireDate = expireDate.substring(0, expireDate.lastIndexOf('('))
-        console.log($scope.usuario.cartaoSus);
         $http({
             method: 'POST',
             url: $rootScope.link_apis + 'consultarCartaoSus',
@@ -66,17 +49,25 @@ APACwo.controller('controle_login', function ($scope, $rootScope, $http, $cookie
                 cartaoSus: $scope.usuario.cartaoSus
             }
         }).then(function successCallback(response) {
-            $scope.usuario = response.data.resultado;
-            $cookies.put('cartaoSus', $scope.usuario.cartaoSus)
-            $localStorage.usuario = $scope.usuario;
+            $scope.usuario = response.data.response[0];
 
-            alertify.success('Seja Bem Vindo!!!');
-            $timeout(function () {
-                location.reload();
-            }, 500)
+            $scope.usuario = $scope.usuario[0];
+            $localStorage.usuario = $scope.usuario;
+            if ($scope.usuario != undefined) {
+                console.log($scope.usuario);
+                alertify.confirm("Seu nome é : " + $scope.usuario.NOME_PACIENTE + " ?").set('labels', { ok: 'Sim', cancel: 'Não' })
+                .set('onok', function () {
+                    $rootScope.$apply(function () {
+                        $rootScope.usuario.logado = true;
+                        $localStorage.usuario = $scope.usuario;
+                        $cookies.put('cartaoSus', $scope.usuario.cartaoSus);
+                        alertify.success('Seja Bem Vindo!!!');
+                    })
+                })
+
+            }
         }, function errorCallback(response) {
             alertify.error(response.data);
-            console.log(response);
 
             $timeout(function () {
                 location.reload();

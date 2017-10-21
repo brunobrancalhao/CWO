@@ -31,12 +31,12 @@ app.post('/consultarCartaoSus', function (req, res) {
         console.log(req.query);
         console.log('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.query.cartaoSus + '\'');
         // query to the database and get the records ''
-        request.query('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as CARTAO_SUS_PACIENTE from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.query.cartaoSus + '\'', function (err, response) {
+        request.query('select top 1 p.nome as NOME_PACIENTE, P.Cartao_SUS as cartaoSus from Pacientes P where (1=1) AND P.Cartao_SUS = \'' + req.query.cartaoSus + '\'', function (err, response) {
             if (err) {
                 sql.close();
                 console.log(err);
             };
-            retorno.method = 'GET';
+            retorno.method = 'POST';
             retorno.uri = 'consultarCartaoSus';
             retorno.response = response.recordsets;
 

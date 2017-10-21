@@ -12,7 +12,9 @@
         $rootScope.sessao_id = 7;
         $rootScope.debug = true;
         $rootScope.appVersion = "1.0.0";
-        $rootScope.usuario = {};
+        $rootScope.usuario = {
+            logado: false
+        };
         $rootScope.listaUsuario = [];
 
         try {
