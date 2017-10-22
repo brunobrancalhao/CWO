@@ -39,7 +39,7 @@
     };
 
     var formata = function (data) {
-        var d = new Date,
+        var d = data,
         dformat = [d.getMonth()+1,
                    d.getDate(),
                    d.getFullYear()].join('/')+' '+

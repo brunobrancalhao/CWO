@@ -1,34 +1,23 @@
-﻿<div ng-init="init()" class="panel panel-default panel-body panel-ernetwork">
-    <div class="form-group">
-        <div class="list-group margim_bottom_0">
-            <div>
-                <div class="list-group-item list_group_item_padding">
-                    <div class="row-content rowGrupo">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default panel_grupo_produto" ng-init="init()">
-                                <div id="collapseOne" class="panel-collapse navbar-collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body panel_paddin">
-                                        <!-- <div ng-repeat="subgrupo in grupo.subgrupo track by $index"> -->
-                                        <div ng-repeat="apac in listApacs track by $index">
-                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                                <div class="panel panel-default panel_interno_subgrupo">
-                                                    <div class="panel-heading painelTitleGrupo" role="tab" id="headingOne">
-                                                        <h4 class="panel-title" ng-click="carregarProcedimentos(apac.controle)">
-                                                            <!-- card -->
-                                                            Procedimento:
-                                                            <br> {{apac.DescricaoProcedimento}}
-                                                            <br> Data Consulta:
-                                                            <br> {{apac.DataConsulta}}
-                                                            <br> Controle:
-                                                            <br> {{apac.controle}}
-                                                            <br> Situação:
-                                                            <br> {{apac.SituacaoAPAC}}
-                                                            <br>
-
-
-
-                                                        </h4>
-                                                    </div>
+﻿<div ng-init="init()">
+    <!-- <div ng-repeat="subgrupo in grupo.subgrupo track by $index"> -->
+    <div ng-repeat="apac in listApacs track by $index">
+        <h4 class="proced">
+         <!-- card -->
+            <div class="textop">
+                <br>
+                <p><strong style="font-size:20px">Procedimento:</strong> 
+                <br>{{apac.DescricaoProcedimento}}</p>
+                <p><strong style="font-size:20px">Data Consulta:</strong>
+                <br> {{apac.DataConsulta}}</p>
+                <p><strong style="font-size:20px">Controle:</strong>
+                <br>{{apac.controle}}</p>
+                <p><strong style="font-size:20px">Situação:</strong>
+                <br>{{apac.SituacaoAPAC}}</p>
+                <button class="btn-ver" ng-click="carregarProcedimentos(apac.controle)">Mais Detalhes</button>
+            </div>  
+        </h4>
+    </div>
+</div>
                                                     <div id="collapseOne" class="panel-collapse panel-collapse in" role="tabpanel" aria-labelledby="headingOne" ng-show="exibir_itens_subgrupo(subgrupo)">
                                                         <div class="panel-body panel_paddin">
                                                             <div class="table-responsive">
@@ -48,19 +37,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- modal procedimentos -->
 <div >
     <div>
@@ -68,30 +44,27 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Procedimento: {{pr.descricao}}</h4>
+                        <h4 class="modal-title" style="text-align:center"><strong>Procedimento: {{DescricaoProcedimento}}</strong></h4>
                         <h5></h5>
                     </div>
                     <div class="modal-body modal_body_Opcao">
                         <div class="form-group">
-                            <div class="col-lg-12" ng-repeat="item in listproc">
-                                <ul class="list-group">
-                                        <li>descrição procedimento?</li>
-                                        <li>?</li>
-                                        <li>Data Consulta</li>
-                                        <li>{{item.DataConsulta}}</li>
-                                        <li>Medico Solicitante</li>
-                                        <li>{{item.MedicoSolicitante}}</li>
-                                        <li>Unidade Solicitante</li>
-                                        <li>{{item.UnidadeSolicitante}}</li>
-                                        <li>Controle</li>
-                                        <li>{{item.controle}}</li>  
-                                </ul>
+                            <div class="col-lg-12" ng-repeat="item in listproc" id="modal">
+                                        <p><strong>Data Consulta</strong>
+                                        <br>{{item.DataConsulta}}</p>
+                                        <p><strong>Medico Solicitante</strong>
+                                        <br>{{item.MedicoSolicitante}}</p>
+                                        <p><strong>Unidade Solicitante</strong>
+                                        <br>{{item.UnidadeSolicitante}}</p>
+                                        <p><strong>Controle</strong>
+                                        <br>{{item.controle}}</p> 
+                                        <hr/>
                             </div>
                         </div>
                         <br />
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        <button class="btn-fechap" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
