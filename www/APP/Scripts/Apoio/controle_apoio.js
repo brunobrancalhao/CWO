@@ -14,7 +14,7 @@
 });
 
 APACwo.controller('controle_apoio', function ($scope, $rootScope, $http, $cookies, aux, $location, $timeout, $localStorage) {
-	$rootScope.nomeTela = 'APOIO';
+	$rootScope.nomeTela = 'Apoio';
 
 		$scope.apoio = function(param) {
 				var pre = document.createElement('pre');

@@ -1151,10 +1151,10 @@ hr{
     text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: white;
     font-size: 16px;
-    font-family: Georgia, Serif;
+    font-family: Arial;
     text-decoration: none;
-    vertical-align: middle;
     }
+    
  .btn-ver:hover {
     border-top-color: #141414;
     background: #141414;

@@ -64,9 +64,12 @@
         }).when('/pedido/consultar_apac', {
             templateUrl: raiz_app + '/View/Template/consultar_apac.html',
             controller: 'controle_apac'
-         }).when('/consultar/apoio', {
+         }).when('/pedido/apoio', {
             templateUrl: raiz_app + '/View/Template/apoio.html',
             controller: 'controle_apoio'
+        }).when('/pedido/info', {
+            templateUrl: raiz_app + '/View/Template/info.html',
+            controller: 'controle_informacao'
         }).otherwise({
             redirectTo: '/'
         });
