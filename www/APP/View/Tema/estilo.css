@@ -595,7 +595,8 @@ body .well p, .container .well p, .container-fluid .well p, body .jumbotron p, .
     .nav>li>a.item_menu {
         padding-top:25px;
         padding-bottom:25px;
-        font-size: 22px;
+        font-size: 35px;
+        
     }
     .nav.sidebar-nav{
         width:100%;
